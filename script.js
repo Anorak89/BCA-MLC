@@ -23,27 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Update active nav link on scroll
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const navHeight = document.getElementById('navbar').offsetHeight;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - navHeight - 10;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        // Optional: highlight active nav link (can add CSS class for .active)
-        // navLinks.forEach(link => {
-        //     link.classList.remove('active');
-        //     if (link.getAttribute('href').includes(current)) {
-        //         link.classList.add('active');
-        //     }
-        // });
-    });
 
     // --- Image Carousel ---
     let slideIndex = 0;
@@ -90,6 +70,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Optional: Auto-play carousel
-    // setInterval(nextSlide, 5000); // Change image every 5 seconds
+    // Auto-play carousel
+    setInterval(nextSlide, 5000); // Change image every 5 seconds
+
+    // --- Scroll Reveal Animation ---
+    const sectionContainers = document.querySelectorAll('.section-container');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    sectionContainers.forEach(container => {
+        revealObserver.observe(container);
+    });
+
+    // --- Active Nav Link Highlighting ---
+    const updateActiveLink = () => {
+        let current = '';
+        const navHeight = document.getElementById('navbar').offsetHeight;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navHeight - 10;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink(); // Run once on load
 });

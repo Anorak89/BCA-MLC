@@ -11,6 +11,7 @@
     --font-body: 'Inter', sans-serif;
     
     --transition: all 0.3s ease;
+    --transition-slow: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -132,7 +133,8 @@ h2::after {
     transition: var(--transition);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
@@ -197,6 +199,9 @@ h2::after {
     max-width: 1000px;
     margin: 0 auto;
     padding: 6rem 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* About Us Section */
@@ -208,8 +213,13 @@ h2::after {
 
 .about-desc {
     text-align: center;
-    font-size: 1.1rem;
-    max-width: 700px;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+    max-width: 720px;
     margin: 0 auto 4rem;
     color: var(--text-light);
 }
@@ -230,6 +240,7 @@ h2::after {
 .secretary-container {
     display: flex;
     justify-content: center;
+    text-align: center;
     margin-top: 2rem;
 }
 
@@ -278,7 +289,12 @@ h2::after {
 }
 
 .competition-desc {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
     font-size: 1.1rem;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
     max-width: 700px;
     margin: 0 auto 3rem;
     color: var(--text-light);
@@ -390,6 +406,11 @@ footer p {
 @keyframes fadeEffect {
     from { opacity: 0.4; }
     to { opacity: 1; }
+}
+
+.section-container.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive */
