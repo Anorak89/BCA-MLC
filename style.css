@@ -237,9 +237,11 @@ h2::after {
     text-align: center;
 }
 
-.secretary-container {
+.other-leadership-container {
     display: flex;
     justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
     text-align: center;
     margin-top: 2rem;
 }
@@ -251,13 +253,13 @@ h2::after {
     transition: var(--transition);
 }
 
-.team-member.secretary {
+.team-member.other-leadership {
     padding: 1.5rem 1rem;
     max-width: 220px;
     width: 100%;
 }
 
-.team-member.secretary h4 {
+.team-member.other-leadership h4 {
     font-size: 1.05rem;
 }
 
