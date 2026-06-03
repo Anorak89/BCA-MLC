@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA Machine Learning Club</title>
+    <meta name="description" content="Official website for the Bergen County Academies Machine Learning Club. Founded September 2024.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="BCA.png" alt="BCA Logo" class="nav-logo">
+                    BCA <span>MLC</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#competition">Competition</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>BCA Machine Learning Club</h1>
+            <p class="subtitle">Exploring the frontiers of Artificial Intelligence</p>
+            <div class="divider"></div>
+            <p class="founded-text">Founded September 2024</p>
+            <a href="#about" class="btn-primary">Learn More</a>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <h2>About Us</h2>
+            <p class="about-desc">
+                The BCA Machine Learning Club is a community of passionate students dedicated to exploring, understanding, and applying the principles of artificial intelligence and machine learning. Founded in September 2024, our mission is to make complex AI concepts accessible and foster a collaborative environment where students can build impactful projects. 
+                <br><br>
+                Through hands-on coding sessions, engaging lectures, and collaborative research initiatives, we aim to bridge the gap between theoretical machine learning and real-world applications. Whether you're a beginner taking your first steps in Python or an advanced programmer looking to design novel neural architectures, the BCA MLC provides the resources and mentorship to elevate your skills.
+            </p>
+            
+            <h3 class="team-heading">Our Team</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Kunj Parikh</h4>
+                    <p>Co-founder</p>
+                </div>
+                <div class="team-member">
+                    <h4>Nikhil Maalige</h4>
+                    <p>Co-founder</p>
+                </div>
+                <div class="team-member">
+                    <h4>Vivaan Joshi</h4>
+                    <p>Co-founder</p>
+                </div>
+                <div class="team-member">
+                    <h4>Yash Korgaonkar</h4>
+                    <p>Co-founder</p>
+                </div>
+            </div>
+            
+            <div class="secretary-container">
+                <div class="team-member secretary">
+                    <h4>Erik Turdiu</h4>
+                    <p>Secretary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competition Section -->
+    <section id="competition" class="competition">
+        <div class="section-container text-center">
+            <h2>Simulation Competition</h2>
+            <p class="competition-desc">
+                We are hosting our flagship Reinforcement Learning Competition focused on optimizing school bus routes! Dive into the complexities of this real-world problem and leverage reinforcement learning to engineer innovative, efficient routing solutions. Test your skills, compete with peers, and learn in a fast-paced environment.
+            </p>
+            <a href="https://competition.bcamlc.com/" target="_blank" class="btn-primary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Gallery / Carousel Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-container">
+            <h2>Gallery</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="assets/IMG_7253.JPG" alt="Club Activity 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/IMG_7254.JPG" alt="Club Activity 2">
+                </div>
+                
+                <button class="carousel-btn prev-btn" aria-label="Previous image">&#10094;</button>
+                <button class="carousel-btn next-btn" aria-label="Next image">&#10095;</button>
+                
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 BCA Machine Learning Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
