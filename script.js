@@ -70,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Initialize carousel state on load
+    showSlides(slideIndex);
+
     // Auto-play carousel
     setInterval(nextSlide, 5000); // Change image every 5 seconds
 
